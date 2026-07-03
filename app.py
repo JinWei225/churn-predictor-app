@@ -18,7 +18,7 @@ if st.button("Analyze & recommend"):
         "support_tickets": tickets,
         "annual_contract": 1 if contract == "Annual" else 0,
     }
-    d = requests.post(N * N, json=payload, timeout=60).json()
+    d = requests.post(N8N, json=payload, timeout=60).json()
     st.metric("Churn probability", f"{d['churn_probability'] * 100:.0f}%")
     st.subheader(f"Risk tier: {d['risk_tier']}")
     st.write(f"Offer: {d['recommended_offer']}")
